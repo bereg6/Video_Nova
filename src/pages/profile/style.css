@@ -1,0 +1,49 @@
+.profile__wrapper.active{
+    background: rgba(5, 0, 34, 0.2);
+    filter: blur(20px);
+    pointer-events: none;
+}
+
+.profile{
+    padding: 0 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.profile h1{
+    margin-bottom: 131px;
+}
+
+.videosHeader{
+    display: flex;
+    padding: 0 14px 34px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.profile__videos{
+    width: 100%;
+}
+
+.videosHeader__userName{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.videosHeader__userName img{
+    width: 20px;
+    height: 20px;
+}
+
+.videosWrapper{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 57px;
+    flex-grow: 1;
+}

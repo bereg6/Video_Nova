@@ -1,0 +1,48 @@
+.home{
+    padding: 0 31px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home.active{
+    background: rgba(5, 0, 34, 0.2);
+    filter: blur(20px);
+    pointer-events: none;
+}
+
+.home__heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 44px 0 85px;
+}
+
+.home__userCards{
+    margin-bottom: 85px;
+}
+
+.userCards__heading{
+    display: flex;
+    align-items: center;
+    padding: 0 19px;
+    margin-bottom: 40px;
+}
+
+.userCards__heading img{
+    width: 30px;
+    height: 30px;
+    margin-left: 14px;
+}
+
+.userCards__wrapper{
+    display: inline-flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.userCards__card{
+    width: 290px;
+    height: 395px;
+    margin: 0 19px 40px 19px;
+}

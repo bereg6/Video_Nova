@@ -1,0 +1,61 @@
+.userCard{
+    width: 290px;
+    height: 395px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #E6E8FF;
+    border-radius: 14px;
+    padding: 35px;
+}
+
+.userCard__image{
+    width: 133px;
+    height: 133px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 18px;
+}
+
+.userCard__userName{
+    margin-bottom: 25px;
+}
+
+.userCard__titleWrapper{
+    margin-bottom: 30px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.titleVideos{
+    display: flex;
+    align-items: center;
+}
+
+.titleVideos__icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.titleVideos__icon img{
+    width: 100%;
+    height: 100%;
+}
+
+.titleLikes{
+    display: flex;
+    align-items: center;
+}
+
+.titleLikes__icon{
+    width: 20px;
+    height: 18px;
+    margin-right: 14px;
+}
+
+.titleLikes__icon img{
+    width: 100%;
+    height: 100%;
+}

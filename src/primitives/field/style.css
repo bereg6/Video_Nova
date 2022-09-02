@@ -1,0 +1,55 @@
+.field{
+    width: 100%;
+    min-height: 117px;
+    margin-bottom: 30px;
+}
+
+.field__input--pass{
+    display: flex;
+    align-items: center;
+}
+
+.field__input--pass span:before{
+    position: absolute;
+    left: -2px;
+    top: 11px;
+    width: 120%;
+    height: 2px;
+    content: "";
+    background: #000;
+    transform: rotate(-45deg);
+}
+
+.field h3{
+    margin-bottom: 19px;
+}
+
+.field__input{
+    height: 71px;
+    background: #E9EEF8;
+    border-radius: 14px;
+    padding: 24px;
+}
+
+.field__input--description{
+    height: 134px;
+}
+
+input, textarea{
+    background: #E9EEF8;
+    height: 100%;
+    width: 100%;
+    resize: none;
+}
+
+.alert{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: #FADCDE;
+    color: #000000;
+    border-radius: 14px;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+}
