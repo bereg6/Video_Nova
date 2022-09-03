@@ -23,11 +23,14 @@ function Field(props) {
     } else if (props.label === "Description") {
         label = "description"
     }
+    function activeInput() {
+        document.getElementById(props.id).focus()
+    }
 
     return(
         <div className="field">
             <h3>{props.label}</h3>
-            <div className={classes}>
+            <div className={classes} onClick={activeInput}>
                 {label === "description" ?
                     <textarea id={props.id} placeholder={`Type ${label}...`}/>
                     : <div>

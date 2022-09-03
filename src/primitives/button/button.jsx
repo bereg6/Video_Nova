@@ -7,7 +7,6 @@ import Loading from "../loading/loading"
 export default function Button(props){
     const transparentClass = !props.transparent ? "button button--blue" : "button button--transparent"
     const classes = !props.disabled ? transparentClass : `${transparentClass} button--disabled`
-
     return <div className={classes} onClick={props.onClick}>{props.text}
         {props.loading ? <div><Loading size={"small"}/></div> : ""}
         {props.id || props.id === 0 ? <Link to={`/profile/${props.id}`} style={{

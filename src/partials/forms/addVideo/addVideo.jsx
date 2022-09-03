@@ -73,9 +73,9 @@ function AddVideo({hideAddVideo, funcTitle, funcDescription, funcLink, alert, ad
             {alert && <Alert text={alert}/>}
             {!addVideoLoading ?
                 <div>
-                <Field id="link" label={"Youtube Link"} />
-                <Field id="title" label={"Name of video"} />
-                <Field id="description" label={"Description"} />
+                <Field id="link" label={"Youtube Link"}/>
+                <Field id="title" label={"Name of video"}/>
+                <Field id="description" label={"Description"}/>
                 </div>
                 : <div style={{position: "relative"}}>
                     {loading && <div className="loadingState">
@@ -113,6 +113,7 @@ function AddVideo({hideAddVideo, funcTitle, funcDescription, funcLink, alert, ad
                         <Button text={"Start Now"} disabled/>
                     </div>}
                 </div>}
+
         </div>
     )
 }

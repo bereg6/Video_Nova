@@ -1,4 +1,7 @@
 .field{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     width: 100%;
     min-height: 117px;
     margin-bottom: 30px;
@@ -25,10 +28,18 @@
 }
 
 .field__input{
+    width: 100%;
     height: 71px;
     background: #E9EEF8;
     border-radius: 14px;
     padding: 24px;
+    cursor: pointer;
+}
+
+.field__input input{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 
 .field__input--description{

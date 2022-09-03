@@ -50,9 +50,9 @@ function SignUp({alert, reg, showAlert, signUpName, signUpPass, rePass, showSign
                 <h1 style={{color: "#FF6363"}}>Up</h1>
             </div>
             {alert && <Alert text={alert}/>}
-            <Field id={"name"} label={"Name"} />
-            <Field id={"password"} label={"Password"} />
-            <Field id={"rePassword"} label={"Repeat Password"} />
+            <Field id={"name"} label={"Name"}/>
+            <Field id={"password"} label={"Password"}/>
+            <Field id={"rePassword"} label={"Repeat Password"}/>
             <div className="form__button">
                 {loading ? <Button text={"Sign Up"} loading/>
                 : <Button text={"Sign Up"} onClick={funcSignUp}/>}

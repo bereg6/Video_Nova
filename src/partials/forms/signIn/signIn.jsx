@@ -45,10 +45,10 @@ function SignIn({alert, auth, showAlert, signInName, signInPass, showSignUp}) {
                 <h1 style={{color: "#FF6363"}}>In</h1>
             </div>
             {alert && <Alert text={alert}/>}
-            <Field id={"name"} label={"Name"} />
-            <Field id={"password"} label={"Password"} />
+            <Field id={"name"} label={"Name"}/>
+            <Field id={"password"} label={"Password"}/>
             <div className="form__button">
-                <Button text={"Sign In"} onClick={funcSignIn} />
+                <Button text={"Sign In"} onClick={funcSignIn}/>
             </div>
             <div className="form__footer">
                 <span>Already have an account?</span>
