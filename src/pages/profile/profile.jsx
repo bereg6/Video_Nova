@@ -13,8 +13,10 @@ import SignUp from "../../partials/forms/signUp/signUp"
 import {useRedirect} from "../../hooks/customHooks"
 import {addUsers, addVideos, showAddVideo} from "../../redux/actions"
 import {blur, unBlur} from "../../functions"
+import VideoPlayer from "../../primitives/videoPlayer/videoPlayer"
 
-function Profile({usersData, videosData, authUser, signInName, signUpName, signIn, signUp, addVideo, showAddVideo}) {
+function Profile({usersData, videosData, authUser, signInName, signUpName,
+                  signIn, signUp, addVideo, showAddVideo, videoPlayer}) {
     useRedirect(authUser, signInName, signUpName)
     const dispatch = useDispatch()
     let params = useParams()
@@ -23,22 +25,25 @@ function Profile({usersData, videosData, authUser, signInName, signUpName, signI
     let thisVideos = []
         if (usersData.length === 0 && videosData.length === 0) {
             Data()
-                .then (() => {
+                .then(() => {
                     usersData.map(user => user.slug === params.user ? thisUser = user : "")
                     videosData.map(video => thisUser.id === video.userId ? thisVideos.push(video) : thisVideos)
                 })
+        } else if (authUser.slug === params.user) {
+            thisUser = authUser
+            videosData.map(video => thisUser.id === video.userId ? thisVideos.push(video) : thisVideos)
         } else {
             usersData.map(user => user.slug === params.user ? thisUser = user : "")
             videosData.map(video => thisUser.id === video.userId ? thisVideos.push(video) : thisVideos)
         }
 
     useEffect(() => {
-        if (signUp || signIn || addVideo) {
+        if (signUp || signIn || addVideo || videoPlayer) {
             blur()
         } else {
             unBlur()
         }
-    }, [signUp, signIn, addVideo])
+    }, [signUp, signIn, addVideo, videoPlayer])
 
     async function Data() {
         usersData = await dispatch(addUsers())
@@ -51,6 +56,7 @@ function Profile({usersData, videosData, authUser, signInName, signUpName, signI
         {signIn && <SignIn/>}
         {signUp && <SignUp/>}
         {addVideo && <AddVideo/>}
+        {videoPlayer && <VideoPlayer/>}
         <Header/>
         <div className="profile__wrapper" id="profile__wrapper">
         {usersData.length !==0 && videosData.length !== 0 ? <div className="profile" id="profile">
@@ -72,7 +78,7 @@ function Profile({usersData, videosData, authUser, signInName, signUpName, signI
                     {thisVideos.length === 0 ? <h1>No videos</h1>
                         : thisVideos.map(({url, title, description, id}) =>
                             <div style={{margin: "0 14px 28px"}}  key={id}>
-                                <Video src={url} heading={title} description={description}/>
+                                <Video src={url} heading={title} description={description} id={id}/>
                             </div>
                         )
                     }
@@ -95,6 +101,7 @@ const mapStateToProps = state => {
         signIn: state.app.signIn,
         signUp: state.app.signUp,
         addVideo: state.app.addVideo,
+        videoPlayer: state.app.videoPlayer,
     }
 }
 const mapDispatchIoProps = {

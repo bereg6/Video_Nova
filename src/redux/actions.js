@@ -23,7 +23,7 @@ import {
     ADD_VIDEO,
     SHOW_LOADING,
     HIDE_LOADING,
-    SHOW_ADD_VIDEO_LOADING, PRE_URL, SHOW_SUCCESSFUL, HIDE_PASS, SHOW_PASS,
+    SHOW_ADD_VIDEO_LOADING, PRE_URL, SHOW_SUCCESSFUL, HIDE_PASS, SHOW_PASS, SHOW_VIDEO_PLAYER, HIDE_VIDEO_PLAYER,
 } from "./types"
 import {customHistory} from "../index"
 
@@ -75,6 +75,16 @@ export function hideAddVideo() {
     return dispatch => {
         dispatch(clearAllFields())
         dispatch({type: HIDE_ADD_VIDEO})
+    }
+}
+export function showVideoPlayer() {
+    return {
+        type: SHOW_VIDEO_PLAYER
+    }
+}
+export function hideVideoPlayer() {
+    return {
+        type: HIDE_VIDEO_PLAYER
     }
 }
 export function showLoading() {

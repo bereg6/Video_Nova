@@ -1,7 +1,7 @@
 import {useNavigate} from "react-router-dom"
 import {useDispatch} from "react-redux"
 import {useEffect} from "react"
-import {hideAddVideo, hideSignIn, hideSignUp} from "../redux/actions"
+import {hideAddVideo, hideSignIn, hideSignUp, hideVideoPlayer} from "../redux/actions"
 
 export const useRedirect = (authUser, signInName, signUpName) => {
     const navigate = useNavigate()
@@ -32,6 +32,8 @@ export const useHideForm = (formName) => {
                    dispatch(hideSignUp())
                 } else if (formName === "addVideo") {
                     dispatch(hideAddVideo())
+                } else if (formName === "videoPlayer") {
+                    dispatch(hideVideoPlayer())
                 }
             }
         }
