@@ -1,3 +1,11 @@
+.profile__wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    transition: all ease-in-out .5s 0s;
+}
+
 .profile__wrapper.active{
     background: rgba(5, 0, 34, 0.2);
     filter: blur(20px);

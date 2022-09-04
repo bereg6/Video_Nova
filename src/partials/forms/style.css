@@ -7,6 +7,8 @@
     left: calc(50% - 644px/2);
     background: #ffffff;
     border-radius: 20px;
+    opacity: 0;
+    transition: all ease-in-out .6s 0s;
 }
 
 .form__heading{
@@ -31,7 +33,7 @@
     margin: 20px 41px 6px;
 }
 
-.loadingState{
+.loadingBlock{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -41,7 +43,7 @@
     z-index: 5;
 }
 
-.loadingState div{
+.loadingBlock div{
     width: 75px;
     height: 75px;
 }

@@ -5,6 +5,7 @@
     width: 100%;
     background: #232323;
     padding-top: 50px;
+    transition: all ease-in-out .5s 0s;
 }
 
 .footer.active{

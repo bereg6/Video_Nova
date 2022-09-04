@@ -107,10 +107,15 @@ h6 {
 
 body{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     font-family: PlusJakartaDisplay;
     font-size: 16px;
     line-height: 140%;
+}
+
+#root{
+    flex-grow: 1;
 }
 
 h1{
@@ -133,8 +138,11 @@ h3 {
 }
 
 .page{
+    display: flex;
+    flex-direction: column;
     padding-top: 31px;
     width: 1440px;
+    height: 100%;
     position: relative;
     text-align: center;
 }

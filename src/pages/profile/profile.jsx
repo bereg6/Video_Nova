@@ -84,7 +84,7 @@ function Profile({usersData, videosData, authUser, signInName, signUpName,
                     }
                 </div>
             </div>
-        </div> : <h1>Loading...</h1>}
+        </div> : <div><h1>Loading...</h1></div>}
         </div>
         <Footer/>
     </div>

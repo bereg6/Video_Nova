@@ -27,13 +27,28 @@ export const useHideForm = (formName) => {
                 form.top + window.pageYOffset > e.pageY || form.bottom + window.pageYOffset < e.pageY) {
                 document.removeEventListener("click", listener)
                 if (formName === "signIn") {
-                    dispatch(hideSignIn())
+                    document.getElementsByClassName("form")[0].style.transition = "all ease-in-out 0.7s 0s"
+                    document.getElementsByClassName("form")[0].style.opacity = "0"
+                    setTimeout(() => {
+                        dispatch(hideSignIn())
+                    }, 300)
                 } else if (formName === "signUp") {
-                   dispatch(hideSignUp())
+                    document.getElementsByClassName("form")[0].style.transition = "all ease-in-out 0.7s 0s"
+                    document.getElementsByClassName("form")[0].style.opacity = "0"
+                    setTimeout(() => {
+                        dispatch(hideSignUp())
+                    }, 300)
                 } else if (formName === "addVideo") {
-                    dispatch(hideAddVideo())
+                    document.getElementsByClassName("form")[0].style.transition = "all ease-in-out 0.7s 0s"
+                    document.getElementsByClassName("form")[0].style.opacity = "0"
+                    setTimeout(() => {
+                        dispatch(hideAddVideo())
+                    }, 300)
                 } else if (formName === "videoPlayer") {
-                    dispatch(hideVideoPlayer())
+                    closePlayer()
+                    setTimeout(() => {
+                        dispatch(hideVideoPlayer())
+                    }, 400)
                 }
             }
         }
@@ -44,4 +59,18 @@ export const useHideForm = (formName) => {
             document.removeEventListener("click", listener)
         }
     }, [])
+}
+
+function closePlayer() {
+    const block = document.getElementById("profile__wrapper")
+    const blockPosition = block.getBoundingClientRect()
+    const currentVideo = document.getElementsByClassName("activeVideo")[0]
+    const videoInFocus = currentVideo.getBoundingClientRect()
+    const videoPlayer = document.getElementById("videoPlayer")
+    const scroll = window.pageYOffset
+    videoPlayer.style.left = `${videoInFocus.left - blockPosition.left}px`
+    videoPlayer.style.top = `${videoInFocus.top + scroll}px`
+    videoPlayer.style.width = `${videoInFocus.width}px`
+    videoPlayer.style.height = `${videoInFocus.height}px`
+    currentVideo.classList.remove("activeVideo")
 }

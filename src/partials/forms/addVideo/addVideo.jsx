@@ -78,12 +78,12 @@ function AddVideo({hideAddVideo, funcTitle, funcDescription, funcLink, alert, ad
                 <Field id="description" label={"Description"}/>
                 </div>
                 : <div style={{position: "relative"}}>
-                    {loading && <div className="loadingState">
+                    {loading && <div className="loadingBlock">
                         <div>
                         <Loading size={"big"}/>
                         </div>
                     </div>}
-                    {successful && <div className="loadingState">
+                    {successful && <div className="loadingBlock">
                         <div>
                             <img src={"../images/successful.png"}
                                  style={{width: "100%", height: "100%"}} alt={""}/>
