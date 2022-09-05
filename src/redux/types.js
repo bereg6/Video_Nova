@@ -1,5 +1,6 @@
 export const ADD_USERS = "HOME/ADD_USERS"
 export const ADD_VIDEOS = "HOME/ADD_VIDEOS"
+export const ADD_USER_VIDEOS = "ADD_USER_VIDEOS"
 export const SIGN_IN = "SIGN_IN"
 export const SIGN_UP = "SIGN_UP"
 export const ADD_VIDEO = "ADD_VIDEO"

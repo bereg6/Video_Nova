@@ -23,7 +23,14 @@ import {
     ADD_VIDEO,
     SHOW_LOADING,
     HIDE_LOADING,
-    SHOW_ADD_VIDEO_LOADING, PRE_URL, SHOW_SUCCESSFUL, HIDE_PASS, SHOW_PASS, SHOW_VIDEO_PLAYER, HIDE_VIDEO_PLAYER,
+    SHOW_ADD_VIDEO_LOADING,
+    PRE_URL,
+    SHOW_SUCCESSFUL,
+    HIDE_PASS,
+    SHOW_PASS,
+    SHOW_VIDEO_PLAYER,
+    HIDE_VIDEO_PLAYER,
+    ADD_USER_VIDEOS,
 } from "./types"
 import {customHistory} from "../index"
 
@@ -197,6 +204,20 @@ export function addVideos() {
         const response = await fetch("https://wonderful-app-lmk4d.cloud.serverless.com/video")
         const json = await response.json()
         dispatch({type: ADD_VIDEOS, payload: json})
+    }
+}
+export function addUserVideos(id) {
+    return async dispatch => {
+        try {
+            const response = await fetch(`https://wonderful-app-lmk4d.cloud.serverless.com/user/${id}`)
+            const json = await response.json()
+            dispatch({type: ADD_USER_VIDEOS, payload: json})
+        } catch (e) {
+            showAlert(e.message)
+            setTimeout(() => {
+                dispatch(hideAlert())
+            }, 3000)
+        }
     }
 }
 export function addVideo(data, token) {
